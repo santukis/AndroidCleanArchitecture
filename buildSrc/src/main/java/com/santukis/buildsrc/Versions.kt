@@ -13,10 +13,9 @@ object Versions {
     }
 
     object Androidx {
-        const val appCompat = "1.4.2"
-        const val constraintLayout = "2.1.4"
+        const val activityCompose = "1.4.0"
+        const val compose = "1.1.1"
         const val core = "1.8.0"
-        const val material = "1.6.1"
     }
 
     object Kotlin {

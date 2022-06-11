@@ -1,5 +1,6 @@
 import com.santukis.buildsrc.Dependencies
 import com.santukis.buildsrc.Modules
+import com.santukis.buildsrc.Versions
 
 plugins {
     id 'com.android.application'
@@ -11,13 +12,26 @@ android {
     defaultConfig {
         applicationId "com.santukis.cleanarchitecture"
     }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.Androidx.compose
+    }
 }
 
 dependencies {
     implementation Dependencies.Androidx.core
-    implementation Dependencies.Androidx.appCompat
-    implementation Dependencies.Androidx.material
-    implementation Dependencies.Androidx.constraintLayout
+    implementation Dependencies.Androidx.activityCompose
+    implementation Dependencies.Androidx.composeRuntime
+    implementation Dependencies.Androidx.composeUi
+    implementation Dependencies.Androidx.composeUiTooling
+    implementation Dependencies.Androidx.composeFoundation
+    implementation Dependencies.Androidx.composeMaterial
+    implementation Dependencies.Androidx.composeMaterialIcons
+    implementation Dependencies.Androidx.composeMaterialIconsExtended
 
     implementation Dependencies.Kotlin.coroutinesCore
 
@@ -32,4 +46,6 @@ dependencies {
     implementation project(Modules.Entities)
     implementation project(Modules.Repositories)
     implementation project(Modules.DataSources)
+
+    androidTestImplementation Dependencies.AndroidTest.composeUi
 }
