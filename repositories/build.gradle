@@ -1,0 +1,8 @@
+import com.santukis.buildsrc.Modules
+
+apply from: "$rootDir/base_kotlin_module.gradle"
+
+dependencies {
+    implementation project(Modules.UseCases)
+    implementation project(Modules.Entities)
+}

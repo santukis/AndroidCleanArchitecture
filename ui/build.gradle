@@ -1,0 +1,35 @@
+import com.santukis.buildsrc.Dependencies
+import com.santukis.buildsrc.Modules
+
+plugins {
+    id 'com.android.application'
+}
+
+apply from: "$rootDir/base_android_module.gradle"
+
+android {
+    defaultConfig {
+        applicationId "com.santukis.cleanarchitecture"
+    }
+}
+
+dependencies {
+    implementation Dependencies.Androidx.core
+    implementation Dependencies.Androidx.appCompat
+    implementation Dependencies.Androidx.material
+    implementation Dependencies.Androidx.constraintLayout
+
+    implementation Dependencies.Kotlin.coroutinesCore
+
+    implementation Dependencies.Dagger.dagger
+    kapt Dependencies.Dagger.daggerCompiler
+    implementation Dependencies.Dagger.daggerAndroid
+    implementation Dependencies.Dagger.daggerAndroidSupport
+    kapt Dependencies.Dagger.daggerAndroidProcessor
+
+    implementation project(Modules.ViewModels)
+    implementation project(Modules.UseCases)
+    implementation project(Modules.Entities)
+    implementation project(Modules.Repositories)
+    implementation project(Modules.DataSources)
+}
