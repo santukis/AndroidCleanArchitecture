@@ -1,8 +1,10 @@
 package com.santukis.cleanarquitecture.injection
 
-import dagger.Module
+import org.kodein.di.*
 
-@Module
-class UseCasesModule {
+fun useCases() = DI.Module(
+    name = "useCases",
+    allowSilentOverride = true
+) {
 
 }

@@ -1,12 +1,23 @@
 package com.santukis.cleanarquitecture
 
-import com.santukis.cleanarquitecture.injection.DaggerApplicationComponent
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import android.app.Application
+import android.content.Context
+import com.santukis.cleanarquitecture.injection.appModule
+import org.kodein.di.DI
+import org.kodein.di.DIAware
 
-class CleanApplication: DaggerApplication() {
+class CleanApplication: Application(), DIAware {
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerApplicationComponent.factory().create(applicationContext)
+    private var overriddenModules: DI.Module? = null
+
+    override val di by DI.lazy(allowSilentOverride = true) {
+        importAll(appModule(application = this@CleanApplication), allowOverride = true)
+        overriddenModules?.apply { importAll(this, allowOverride = true) }
+    }
+
+    fun overrideModules(modules: DI.Module) {
+        overriddenModules = modules
     }
 }
+
+fun Context.asApp() = this.applicationContext as CleanApplication

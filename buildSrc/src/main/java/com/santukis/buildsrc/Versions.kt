@@ -22,7 +22,7 @@ object Versions {
         const val coroutinesCore = "1.5.2"
     }
 
-    object Dagger {
-        const val dagger = "2.41"
+    object Kodein {
+        const val kodein = "7.5.0"
     }
 }

@@ -35,11 +35,9 @@ dependencies {
 
     implementation Dependencies.Kotlin.coroutinesCore
 
-    implementation Dependencies.Dagger.dagger
-    kapt Dependencies.Dagger.daggerCompiler
-    implementation Dependencies.Dagger.daggerAndroid
-    implementation Dependencies.Dagger.daggerAndroidSupport
-    kapt Dependencies.Dagger.daggerAndroidProcessor
+    implementation Dependencies.Kodein.kodein
+    implementation Dependencies.Kodein.kodeinAndroidFramework
+    implementation Dependencies.Kodein.kodeinConfJvm
 
     implementation project(Modules.ViewModels)
     implementation project(Modules.UseCases)

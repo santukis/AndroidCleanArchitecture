@@ -1,8 +1,10 @@
 package com.santukis.cleanarquitecture.injection
 
-import dagger.Module
+import org.kodein.di.*
 
-@Module
-class RepositoriesModule {
+fun repositories() = DI.Module(
+    name = "repositories",
+    allowSilentOverride = true
+) {
 
 }

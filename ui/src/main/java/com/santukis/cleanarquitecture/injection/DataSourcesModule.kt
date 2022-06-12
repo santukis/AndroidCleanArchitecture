@@ -1,7 +1,10 @@
 package com.santukis.cleanarquitecture.injection
 
-import dagger.Module
+import org.kodein.di.*
 
-@Module
-class DataSourcesModule {
+fun dataSources() = DI.Module(
+    name = "dataSources",
+    allowSilentOverride = true
+) {
+
 }

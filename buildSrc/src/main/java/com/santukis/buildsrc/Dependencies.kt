@@ -25,12 +25,10 @@ class Dependencies {
         const val composeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:${Versions.Androidx.compose}"
     }
 
-    object Dagger {
-        const val dagger = "com.google.dagger:dagger:${Versions.Dagger.dagger}"
-        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.Dagger.dagger}"
-        const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.Dagger.dagger}"
-        const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.Dagger.dagger}"
-        const val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Versions.Dagger.dagger}"
+    object Kodein {
+        const val kodein = "org.kodein.di:kodein-di:${Versions.Kodein.kodein}"
+        const val kodeinAndroidFramework = "org.kodein.di:kodein-di-framework-android-x:${Versions.Kodein.kodein}"
+        const val kodeinConfJvm = "org.kodein.di:kodein-di-conf-jvm:${Versions.Kodein.kodein}"
     }
 
     object Kotlin {
