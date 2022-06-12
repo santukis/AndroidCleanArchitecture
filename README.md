@@ -1,12 +1,12 @@
-##Android Clean Architecture
+## Android Clean Architecture
 
-#Base project to use clean architecture on Android apps.
+# Base project to use clean architecture on Android apps.
 
 Project structure based on Martin's *Dependency Rule* and The *Dependency Inversion Principle*
 
 ![Clean Architecture Structure](/art/CleanArchitecture.jpg)
 
-Project Modules
+## Project Modules
 
 *ui -> Is the application module. Uses Jetpack compose as render framework. Depends on all modules
 
@@ -37,7 +37,7 @@ ui -> viewmodels -> usecases -> repositories -> datasources
 
 datasources -> repositories -> usecases -> viewmodels -> ui
 
-#References
+# References
 
 Martin, R.C. 2009. **Clean Code. A Handbook of Agile Software Craftsmanship** Pearson
 
