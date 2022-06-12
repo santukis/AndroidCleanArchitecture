@@ -4,8 +4,9 @@ interface RepositoryStrategy<Input, Output> {
     suspend fun execute(input: Input): Result<Output>
 }
 
-suspend fun <T> Result<T>.getOr(alternative: suspend () -> Result<T>): Result<T> =
-    when (this.isSuccess) {
-        true -> this
-        else -> alternative()
+suspend infix fun <T> Result<T>?.or(alternative: suspend () -> Result<T>): Result<T> =
+    if (this == null || isFailure) {
+        alternative()
+    } else {
+        this
     }
