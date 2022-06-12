@@ -8,27 +8,27 @@ Project structure based on Martin's *Dependency Rule* and The *Dependency Invers
 
 ## Project Modules
 
-*ui -> Is the application module. Uses Jetpack compose as render framework. Depends on all modules
+* ui -> Is the application module. Uses Jetpack compose as render framework. Depends on all modules
 
-*viewmodels -> Depends on **usecases** and **entities** module
+* viewmodels -> Depends on **usecases** and **entities** module
 
-*usecases -> Depends on **entities** module
+* usecases -> Depends on **entities** module
 
-*entities -> Independent from other modules
+* entities -> Independent from other modules
 
-*repositories -> Depends on **usecases** and **entities** modules
+* repositories -> Depends on **usecases** and **entities** modules
 
-*datasources -> Depends on **repositories** and **entities** modules
+* datasources -> Depends on **repositories** and **entities** modules
 
 
 This modules can be also structured in three different layers:
 
 
-*UI -> **ui** and **viewmodels** modules
+* UI -> **ui** and **viewmodels** modules
 
-*Domain -> **usecases** and **entities** modules
+* Domain -> **usecases** and **entities** modules
 
-*Data -> **repositories** and **datasources** modules
+* Data -> **repositories** and **datasources** modules
 
 
 UI and Data layer depends on Domain layer and Domain layer is independent.
