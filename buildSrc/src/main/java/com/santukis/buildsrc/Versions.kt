@@ -3,6 +3,7 @@ package com.santukis.buildsrc
 object Versions {
 
     object Test {
+        const val mockk = "1.12.4"
         const val junit4 = "4.13.2"
         const val junit5 = "5.8.1"
     }

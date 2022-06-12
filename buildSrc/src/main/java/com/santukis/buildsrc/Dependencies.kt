@@ -5,12 +5,15 @@ class Dependencies {
     object Test {
         const val junit4 = "junit:junit:${Versions.Test.junit4}"
         const val junit5 = "org.junit.jupiter:junit-jupiter:${Versions.Test.junit5}"
+        const val mockK = "io.mockk:mockk:${Versions.Test.mockk}"
+        const val mockKJvm = "io.mockk:mockk-agent-jvm:${Versions.Test.mockk}"
     }
 
     object AndroidTest {
         const val junit4 = "androidx.test.ext:junit:${Versions.AndroidTest.junit4}"
         const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espressoCore}"
         const val composeUi = "androidx.compose.ui:ui-test-junit4:${Versions.Androidx.compose}"
+        const val mockKAndroid = "io.mockk:mockk-android:${Versions.Test.mockk}"
     }
 
     object Androidx {

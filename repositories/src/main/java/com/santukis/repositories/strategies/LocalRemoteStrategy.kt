@@ -6,14 +6,14 @@ abstract class LocalRemoteStrategy<Input, Output>: RepositoryStrategy<Input, Out
 
     protected abstract suspend fun loadFromRemote(input: Input): Result<Output>
 
-    protected abstract suspend fun saveIntoLocal(output: Output): Result<Output>
+    protected abstract suspend fun saveIntoLocal(output: Result<Output>): Result<Output>
 
     override suspend fun execute(input: Input): Result<Output> {
         return loadFromLocal(input).getOr {
             val remote = loadFromRemote(input)
 
             when (remote.isSuccess) {
-                true -> saveIntoLocal(remote.getOrThrow())
+                true -> saveIntoLocal(remote)
                 else -> remote
             }
         }
