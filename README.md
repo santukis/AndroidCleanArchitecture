@@ -20,7 +20,9 @@ Project structure based on Martin's *Dependency Rule* and The *Dependency Invers
 
 *datasources -> Depends on **repositories** and **entities** modules
 
-This modules can be also structured in thre different layers:
+
+This modules can be also structured in three different layers:
+
 
 *UI -> **ui** and **viewmodels** modules
 
@@ -28,7 +30,9 @@ This modules can be also structured in thre different layers:
 
 *Data -> **repositories** and **datasources** modules
 
-UI and Data layer depends on Domain layeer and Domain layer is independent.
+
+UI and Data layer depends on Domain layer and Domain layer is independent.
+
 
 An event originating from the UI (e.g. a user interaction with the app) that requires/modify some data
 stored in local or remote data sources follows the next flow:
